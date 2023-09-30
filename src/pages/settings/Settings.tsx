@@ -1,9 +1,10 @@
 import './Settings.css';
 import Layout from '../../components/layout/Layout';
-import { IonIcon, IonItem, IonLabel, IonList, IonToggle } from '@ionic/react';
+import { IonIcon, IonItem, IonLabel, IonList, IonToggle, useIonRouter } from '@ionic/react';
 import { languageOutline, moonOutline, callOutline } from "ionicons/icons";
 
 const Settings: React.FC = () => {
+  const router = useIonRouter()
   return (
     <Layout>
       <IonList>
@@ -18,7 +19,7 @@ const Settings: React.FC = () => {
         </IonItem>
         <IonItem>
           <IonIcon icon={callOutline} className="ion-margin-end ion-padding-vertical" />
-          <IonLabel >Əlaqə</IonLabel>
+          <IonLabel onClick={()=>router.push('/contact')}>Əlaqə</IonLabel>
         </IonItem>
       </IonList>
     </Layout>
