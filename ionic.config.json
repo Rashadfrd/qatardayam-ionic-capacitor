@@ -1,0 +1,7 @@
+{
+  "name": "qatardayam",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
