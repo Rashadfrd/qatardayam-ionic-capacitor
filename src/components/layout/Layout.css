@@ -1,0 +1,12 @@
+.logoImg{
+    height: 40px;
+    width: 40px;
+}
+.header-inner-left{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.backBtn{
+    margin-top: 5px !important;
+}
