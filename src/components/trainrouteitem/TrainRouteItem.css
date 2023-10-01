@@ -1,0 +1,78 @@
+.card-wrapper{
+    border: 1px solid #b6b6b6;
+    border-radius: 15px;
+    padding: 0 10px;
+    margin: 0;
+    text-decoration: none;
+  }
+  
+  .card-container{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    font-size: 17px;
+    text-decoration: none;
+    height: 70px;
+  }
+
+  .card-left{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 10px;
+    font-weight: bold;
+  }
+  .card-left-departuretime{
+    font-size: 16px;
+  }
+  .card-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    flex: 1;
+  }
+  
+  .card-right-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-right-info-city{
+    font-weight: 500;
+  }
+  .card-right-info-time{
+    font-size: 13px;
+  }
+  .card-right-img-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-right-trainnum{
+    font-size: 13px;
+    font-weight: bold;
+  }
+  .card-right-img{
+    width: 20px;
+  }
+  .card-separator{
+    width: 1px;
+    background-color: #b6b6b6;
+    margin: 0 10px 0 5px;
+  }
+  
+  .card-deactive{
+    opacity: .5;
+  }
+  
+  .toggle{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
