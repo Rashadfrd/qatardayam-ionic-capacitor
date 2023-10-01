@@ -1,4 +1,5 @@
 import { Redirect, Route } from "react-router-dom";
+import { useEffect } from "react";
 import {
   IonApp,
   IonIcon,
@@ -37,11 +38,23 @@ import SingleRoute from "./pages/singleroute/SingleRoute";
 
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-      <IonRouterOutlet animated>
+const App: React.FC = () => {
+  const handleTheme = () => {
+    const theme = localStorage.getItem("darkmode");
+
+    if (theme) {
+      document.body.classList.toggle("dark", JSON.parse(theme));
+    }
+  };
+
+  useEffect(() => {
+    handleTheme();
+  }, []);
+  return (
+    <IonApp>
+      <IonReactRouter>
+        <IonTabs>
+          <IonRouterOutlet animated>
             <Route exact path="/home" component={Home} />
             <Route exact path="/route/:id" component={SingleRoute} />
             <Route exact path="/settings" component={Settings} />
@@ -50,20 +63,21 @@ const App: React.FC = () => (
               <Redirect to="/home" />
             </Route>
           </IonRouterOutlet>
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="home" href="/home">
-            <IonIcon icon={homeOutline} />
-            <IonLabel>Home</IonLabel>
-          </IonTabButton>
+          <IonTabBar slot="bottom">
+            <IonTabButton tab="home" href="/home">
+              <IonIcon icon={homeOutline} />
+              <IonLabel>Home</IonLabel>
+            </IonTabButton>
 
-          <IonTabButton tab="radio" href="/settings">
-            <IonIcon icon={settingsOutline} />
-            <IonLabel>Settings</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp>
-);
+            <IonTabButton tab="radio" href="/settings">
+              <IonIcon icon={settingsOutline} />
+              <IonLabel>Settings</IonLabel>
+            </IonTabButton>
+          </IonTabBar>
+        </IonTabs>
+      </IonReactRouter>
+    </IonApp>
+  );
+};
 
 export default App;

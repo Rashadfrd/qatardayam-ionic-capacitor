@@ -11,16 +11,18 @@ const options = [
 ];
 
 const TrainRoutes: React.FC = () => {
+    const storedTheme = localStorage.getItem("darkmode");
+    const theme = storedTheme ? JSON.parse(storedTheme) : null;
   return (
     <>
       <div className="selectRoute ion-padding ">
-        <Select
+      <Select
           className="react-select"
           classNamePrefix="react-select"
           styles={{
             control: (baseStyles, state) => ({
               ...baseStyles,
-              backgroundColor: "#ececec",
+              backgroundColor: theme ? "#45616A" : "#ececec" ,
               borderRadius: "15px",
               height: "70px",
               padding: "10px",
@@ -29,11 +31,11 @@ const TrainRoutes: React.FC = () => {
             }),
             placeholder: (baseStyles) => ({
               ...baseStyles,
-              color: "black",
+              color: theme ? "white" : 'black',
             }),
             dropdownIndicator: (baseStyles) => ({
               ...baseStyles,
-              color: "black",
+              color: theme ? "white" : 'black',
             }),
             indicatorSeparator: () => ({
               display: "none",
@@ -42,21 +44,21 @@ const TrainRoutes: React.FC = () => {
               ...baseStyles,
               borderRadius: "15px",
               overflow: "hidden",
-              zIndex: 3,
+              zIndex:3
             }),
             menuList: (baseStyles) => ({
               ...baseStyles,
-              backgroundColor: "#ececec",
+              backgroundColor: theme ? "#45616A" : '#ececec',
             }),
             option: (baseStyles, state) => ({
               ...baseStyles,
               padding: "15px",
-              backgroundColor: state.isFocused ? "#dbd9d9" : "#ececec",
-              color: state.isFocused ? "black" : "black",
+              backgroundColor: theme ? state.isFocused ? "#364e54" : "#41616A" : state.isFocused ? "#dbd9d9" : "#ececec",
+              color: theme ? state.isFocused ? "white" : "white" : state.isFocused ? "black" : "black" ,
             }),
             singleValue: (provided, state) => ({
               ...provided,
-              color: "black",
+              color: theme ? 'white' : 'black',
             }),
           }}
           options={options}
