@@ -33,6 +33,7 @@ import "@ionic/react/css/display.css";
 import "./theme/variables.css";
 import Settings from "./pages/settings/Settings";
 import Contact from "./pages/contact/Contact";
+import SingleRoute from "./pages/singleroute/SingleRoute";
 
 setupIonicReact();
 
@@ -40,14 +41,15 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonTabs>
-        <IonRouterOutlet>
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/settings" component={Settings} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/">
-            <Redirect to="/home" />
-          </Route>
-        </IonRouterOutlet>
+      <IonRouterOutlet animated>
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/route/:id" component={SingleRoute} />
+            <Route exact path="/settings" component={Settings} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/">
+              <Redirect to="/home" />
+            </Route>
+          </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="home" href="/home">
             <IonIcon icon={homeOutline} />
