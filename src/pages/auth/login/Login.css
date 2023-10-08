@@ -1,0 +1,34 @@
+.form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-item{
+    border: 1px solid rgb(168, 168, 168);
+    border-radius: 7px;
+}
+
+.form-item > input{
+    width: 100%;
+    height: 55px;
+    border: none;
+    border-radius: 7px;
+    padding: 0 10px;
+    font-size: 17px;
+    outline: none;
+    &:focus::placeholder{
+        font-size: 13px;
+        transition: .3s;
+        transform: translateY(-19px);
+    }
+}
+
+.submit-btn{
+    background-color: #32A2C6;
+    height: 55px;
+    border-radius: 7px;
+    font-size: 17px;
+    color: white;
+}

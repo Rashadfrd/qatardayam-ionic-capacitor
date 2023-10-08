@@ -13,6 +13,7 @@ import {
 import { IonReactRouter } from "@ionic/react-router";
 import Home from "./pages/home/Home";
 import { homeOutline, settingsOutline } from "ionicons/icons";
+import './App.css'
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -35,6 +36,8 @@ import "./theme/variables.css";
 import Settings from "./pages/settings/Settings";
 import Contact from "./pages/contact/Contact";
 import SingleRoute from "./pages/singleroute/SingleRoute";
+import Login from "./pages/auth/login/Login";
+import Register from "./pages/auth/register/Register";
 
 setupIonicReact();
 
@@ -75,6 +78,8 @@ const App: React.FC = () => {
             </IonTabButton>
           </IonTabBar>
         </IonTabs>
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
       </IonReactRouter>
     </IonApp>
   );

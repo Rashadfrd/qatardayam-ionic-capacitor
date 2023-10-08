@@ -7,11 +7,11 @@ import "./Layout.css";
 import { useLocation } from "react-router";
 import { chevronBackOutline, notificationsOutline } from "ionicons/icons";
 
-interface LayoutProps {
+interface ILayoutProps {
   children: ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<ILayoutProps> = ({ children }) => {
   const [showModal, setShowModal] = useState<boolean>(false);
 
   const openModal = () => {
