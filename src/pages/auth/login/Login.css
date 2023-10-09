@@ -10,6 +10,21 @@
     border-radius: 7px;
 }
 
+.input-error{
+    color: red;
+}
+
+.link-register{
+    margin-top: 10px;
+}
+
+.learn-more{
+    color: rgb(0, 128, 255);
+}
+.learn-more-inner{
+    margin-top: 10px;
+}
+
 .form-item > input{
     width: 100%;
     height: 55px;

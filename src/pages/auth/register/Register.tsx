@@ -5,10 +5,9 @@ import { Link } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
 import { TRegisterSchema, registerSchema } from "../../../schemas";
+import { TLoginInputs } from "../login/Login";
 
-type TRegisterInputs = {
-  email: string;
-  password: string;
+type TRegisterInputs = TLoginInputs &{
   confirmPassword: string;
 };
 
@@ -36,28 +35,28 @@ const Register: React.FC = () => {
             {...register("email")}
           />
         </div>
-        {errors.email && <p>{errors.email.message}</p>}
+        {errors.email && <p className="input-error">{errors.email.message}</p>}
         <div className="form-item">
           <input
             type="password"
             placeholder="Şifrə"
             {...register("password")}
           />
-          {errors.email && <p>{errors.password?.message}</p>}
         </div>
+          {errors.password && <p className="input-error">{errors.password.message}</p>}
         <div className="form-item">
           <input
             type="password"
             placeholder="Şifrə təsdiq"
             {...register("confirmPassword")}
           />
-          {errors.email && <p>{errors.confirmPassword?.message}</p>}
         </div>
+          {errors.confirmPassword && <p className="input-error">{errors.confirmPassword.message}</p>}
         <button type="submit" className="submit-btn">
           Qeydiyyatdan Keç
         </button>
       </form>
-      <p>
+      <p className="link-login">
         Hesabınız var? <Link to={"/login"}>Giriş</Link>
       </p>
     </AuthLayout>
